@@ -381,9 +381,14 @@ void CFuncRotating::Spawn()
 		pev->movedir = Vector( 0.0f, 0.0f, 1.0f );
 	if( FBitSet( pev->spawnflags, SF_BRUSH_ROTATE_X_AXIS ) )
 		pev->movedir = pev->movedir + Vector( 1.0f, 0.0f, 0.0f );
-	if( FBitSet( pev->spawnflags, SF_BRUSH_ROTATE_Y_AXIS ) ) 
-		pev->movedir = pev->movedir + Vector( 0.0f, 1.0f, 0.0f );	// y-axis
-
+	if( 
+		FBitSet( pev->spawnflags, SF_BRUSH_ROTATE_Y_AXIS ) || 
+		( !FBitSet( pev->spawnflags, SF_BRUSH_ROTATE_X_AXIS ) && !FBitSet( pev->spawnflags, SF_BRUSH_ROTATE_X_AXIS ) ) 
+	)
+	{ 
+		pev->movedir = pev->movedir + Vector( 0.0f, 1.0f, 0.0f );	// y-axis, default
+	}
+	
 	// check for reverse rotation
 	if( FBitSet( pev->spawnflags, SF_BRUSH_ROTATE_BACKWARDS ) )
 		pev->movedir = pev->movedir * -1.0f;
