@@ -1,6 +1,6 @@
 BARNACLE_FIX_VISIBILITY=OFF # Barnacle tongue length fix
 CLIENT_WEAPONS=ON # Client local weapons prediction
-CROWBAR_IDLE_ANIM=OFF # Crowbar idle animation
+CROWBAR_IDLE_ANIM=ON # Crowbar idle animation
 CROWBAR_DELAY_FIX=OFF # Crowbar attack delay fix
 CROWBAR_FIX_RAPID_CROWBAR=ON # Rapid crowbar fix
 GAUSS_OVERCHARGE_FIX=OFF # Gauss overcharge fix
@@ -17,7 +17,7 @@ GAMEDIR=hl_game # Gamedir path
 
 # keys below must match liblist.gam/gameinfo.txt
 SERVER_INSTALL_DIR=dlls # Where to put server dll
-CLIENT_INSTALL_DIR=cl_dll # Where to put client or menu dll
+CLIENT_INSTALL_DIR=cl_dlls # Where to put client or menu dll
 SERVER_LIBRARY_NAME=hl_game # Default server dll name
 
 # Keep disabled until liblist.gam uses different name for OSX and Linux (e.g. Counter-Strike uses mp.dll on Windows and cs.so on Linux)
